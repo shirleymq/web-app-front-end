@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Chess from "../components/Chess";
+import Chess from "../components/chess/Chess";
 
 const router = createBrowserRouter([
   {
