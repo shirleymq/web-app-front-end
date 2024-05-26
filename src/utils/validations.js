@@ -1,4 +1,4 @@
-export const validateData = (data, setError, clearErrors) => {
+export const isChessDataValid = (data, setError, clearErrors) => {
   if (!data) {
     setError("input", {
       type: "manual",
@@ -47,6 +47,7 @@ export const validateData = (data, setError, clearErrors) => {
     });
     return false;
   }
+
   for (let obstacle of data.obstacles) {
     if (obstacle.length !== 2 || isNaN(obstacle[0]) || isNaN(obstacle[1])) {
       setError("input", {
@@ -55,6 +56,29 @@ export const validateData = (data, setError, clearErrors) => {
       });
       return false;
     }
+  }
+  clearErrors("input");
+  return true;
+};
+
+export const isStringValueValid = (data, setError, clearErrors) => {
+  const regex = /^[a-z]+$/;
+
+  if (data.length < 1 || data.length > 100000) {
+    setError("input", {
+      type: "manual",
+      message:
+        "La longitud debe ser mayor o igual a 1 y menor o igual a 100000.",
+    });
+    return false;
+  }
+
+  if (!regex.test(data)) {
+    setError("input", {
+      type: "manual",
+      message: "Solo se permiten letras minúsculas del alfabeto inglés.",
+    });
+    return false;
   }
   clearErrors("input");
   return true;

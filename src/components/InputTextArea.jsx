@@ -1,11 +1,11 @@
-export const InputTextArea = ({ register, errors }) => {
+export const InputTextArea = ({ id, register, errors }) => {
   return (
     <div>
-      <label htmlFor="input-1" className="form-label">
-        Entrada:
+      <label htmlFor={`input-${id}`} className="form-label">
+        Input:
       </label>
       <textarea
-        id="input-1"
+        id={`input-${id}`}
         rows={4}
         className={`form-control ${errors.input ? "is-invalid" : ""}`}
         {...register("input")}

@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ShowResult } from "../ShowResult";
 import { InputTextArea } from "../InputTextArea";
-import { isChessDataValid, separateChessData } from "../../utils";
-import { getQueenAttackableSquares } from "../../services";
+import { isStringValueValid } from "../../utils";
+import { getMaximunValueFunction } from "../../services";
 
-const Chess = () => {
+const StringValue = () => {
   const {
     register,
     handleSubmit,
@@ -17,32 +17,30 @@ const Chess = () => {
 
   const handleButtonClick = async (data) => {
     setOutput("");
-    const separatedInput = separateChessData(data.input);
     let result = "";
-    if (isChessDataValid(separatedInput, setError, clearErrors)) {
-      result = await getQueenAttackableSquares(separatedInput);
+    if (isStringValueValid(data.input, setError, clearErrors)) {
+      result = await getMaximunValueFunction(data);
       setOutput(result.data);
     }
   };
 
   return (
     <div className="container mt-3">
-      <p className="h4 mb-3">Chess</p>
+      <p className="h4 mb-3">String Value</p>
       <form onSubmit={handleSubmit(handleButtonClick)}>
         <div className="row">
           <div className="col-12 col-md-6 mb-3">
-            <InputTextArea id="1" register={register} errors={errors} />
+            <InputTextArea id="2" register={register} errors={errors} />
             <div className="d-flex justify-content-end mt-2">
               <button type="submit" className="btn btn-primary">
                 Calculate
               </button>
             </div>
           </div>
-          <ShowResult id="1" data={output} />
+          <ShowResult id="2" data={output} />
         </div>
       </form>
     </div>
   );
 };
-
-export default Chess;
+export default StringValue;

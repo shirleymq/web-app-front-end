@@ -1,4 +1,4 @@
-export const separateData = (data) => {
+export const separateChessData = (data) => {
   let lines = data.split("\n");
   lines = lines.filter((line) => line.length > 0);
   if (lines.length < 2) return;

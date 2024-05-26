@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Chess from "../components/chess/Chess";
+import StringValue from "../components/string-value/StringValue";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/problem-2",
-    element: <div>Problem 2</div>,
+    element: <StringValue />,
   },
 ]);
 const MyRoutes = () => {
