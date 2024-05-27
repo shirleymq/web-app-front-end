@@ -1,8 +1,30 @@
-# React + Vite
+# Proyecto WEB APP - FRONT END
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto de aplicación web desarrollado con React. A continuación, se detallan los pasos para instalar y poner en marcha el proyecto.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Node.js >= 18.20
+- npm >= 10.5
+- Git
+
+## Instalación
+
+1. **Clonar el repositorio**
+
+   ```bash
+   git clone https://github.com/shirleymq/web-app-front-end.git
+   cd web-app-front-end
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+3. **Levantar el servidor de desarrollo**
+
+   ```bash
+   npm run dev
+   ```
+
+   La aplicación estará disponible en http://localhost:5173.
